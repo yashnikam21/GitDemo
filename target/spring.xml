@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="add1" class="com.lti.TwoObjects.Address">
+		<constructor-arg value="Mumbai"></constructor-arg>
+		<constructor-arg value="Maharashtra"></constructor-arg>
+	</bean>
+	<bean id="add2" class="com.lti.TwoObjects.Address">
+		<constructor-arg value="Pune"></constructor-arg>
+		<constructor-arg value="Maharashtra"></constructor-arg>
+	</bean>
+	
+	<bean id="db" class="com.lti.TwoObjects.db">
+		<constructor-arg value="101" type="int"></constructor-arg>
+		<constructor-arg value="Yash"></constructor-arg>
+		<constructor-arg>
+			<list>
+			<ref bean="add1" />
+			<ref bean="add2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>
